@@ -4,9 +4,13 @@
     "node": true,
     "jest/globals": true
   },
-  "extends": "airbnb",
+  "extends": ["prettier", "airbnb"],
+  "plugins": ["prettier", "jest"],
+  "ignorePatterns": ["/tmp/**/*.js"],
   "rules": {
+    "no-underscore-dangle": 0,
     "comma-dangle": 0,
+    "implicit-arrow-linebreak": 0,
     "linebreak-style": 0,
     "max-len": [
       "error",
@@ -22,11 +26,12 @@
       {
         "argsIgnorePattern": "next"
       }
-    ]
+    ],
+    "prettier/prettier": "error"
   },
   "settings": {
     "react": {
-      "version": "latest"
+      "version": "999.999.999"
     }
   }
 }
