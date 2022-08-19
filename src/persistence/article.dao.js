@@ -9,7 +9,7 @@ class ArticleRepository {
     this.store.clear();
   }
 
-  save(article) {
+  persist(article) {
     this.store.add(article);
   }
 

@@ -22,7 +22,7 @@ describe('datastore', () => {
     expect(article.date).toEqual('2022-08-18');
   });
 
-  it('should throw an error when id already exists', () => {
+  it('should throw error when id already exists', () => {
     dataStore.add(mock(1, '2022-08-18'));
     expect(() => dataStore.add(mock(1, '2022-08-19'))).toThrow(
       'id already exists'
@@ -33,9 +33,7 @@ describe('datastore', () => {
 describe('getByTagsAndDate', () => {
   beforeEach(() => {
     dataStore.clear();
-    bulkMockData.forEach((o) => {
-      dataStore.add(o);
-    });
+    bulkMockData.forEach((o) => dataStore.add(o));
   });
 
   it('given no arguments, should return all articles', () => {

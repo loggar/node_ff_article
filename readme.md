@@ -44,19 +44,22 @@ $ npm start
 
 ## Requirements and solutions
 
-Simple data store provide a feature that is filtering articles by the given tag name and date
+- minimised using utilities in order to keep simple coding styles.
+- mainly focused on fulfilling requirements.
+- created a simple data store provide feature for saving/filtering articles.
+- isolated/divided repository module for extending persistence layer in future.
 
 ## Assumptions
 
 In data storage, the "id" field value of articles:
 
-- is unique
-- is a string type value which only contains digits
+- is unique.
+- is a string type value which only contains digits.
 
-In data storage, searching articles
+In data storage, searching articles:
 
-- by date is more performant than by tag name
-- only provide filtering articles by date and tag name
+- by date is more performant than by tag name.
+- only provide filtering articles by date and tag name.
 
 ## Project Timetable
 
@@ -65,7 +68,7 @@ In data storage, searching articles
 | Setting up project (Git, NodeJS, IDE, linter, code-formatter, test-runner) | 2                |
 | Setting up Babel, test-coverage                                            | 2                |
 | Data access layer implementation (including mock data generation)          | 4                |
-| Service logic implementation                                               |                  |
+| Service logic implementation                                               | 1                |
 | HTTP ser setting and REST API endpoint implementation                      |                  |
 | Submission                                                                 |                  |
 

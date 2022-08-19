@@ -4,14 +4,14 @@ import bulkMockData from '../../mock/articles/articles.mock.json';
 
 const article = mock(1, '2022-08-19');
 
-describe('save', () => {
+describe('persist', () => {
   beforeEach(() => {
     dao.clear();
   });
 
-  it('should throw an error when id already exists', () => {
-    dao.save(article);
-    expect(() => dao.save(article)).toThrow('id already exists');
+  it('should throw error when id already exists', () => {
+    dao.persist(article);
+    expect(() => dao.persist(article)).toThrow('id already exists');
   });
 });
 
@@ -25,7 +25,7 @@ describe('retrieve', () => {
   });
 
   it('should return articles which contains the article added', () => {
-    dao.save(article);
+    dao.persist(article);
     const articles = dao.retrieve();
     expect(articles.length).toBe(1);
     expect(articles[0]).toEqual(article);
@@ -35,9 +35,7 @@ describe('retrieve', () => {
 describe('retrieve', () => {
   beforeEach(() => {
     dao.clear();
-    bulkMockData.forEach((o) => {
-      dao.save(o);
-    });
+    bulkMockData.forEach((o) => dao.persist(o));
   });
 
   it('given no arguments, should return all articles', () => {
