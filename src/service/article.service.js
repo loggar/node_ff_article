@@ -26,7 +26,7 @@ class ArticleService {
     return {
       tag: filter.tag,
       count: articles.length,
-      articles: [...new Set(ids)],
+      articles: [...new Set(ids)].sort((a, b) => a - b).slice(-10), // remove duplicates, sort ascending order, last 10 items
       related_tags: [...tags],
     };
   }

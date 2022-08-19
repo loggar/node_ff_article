@@ -70,7 +70,7 @@ describe('getByTagsAndDate', () => {
     const tag = 'fitness';
     const date = '2022-08-20';
 
-    expect(dataStore.getByTagsAndDate(tag, undefined).length).toBe(275);
+    expect(dataStore.getByTagsAndDate(tag, undefined).length).toBe(247);
     expect(dataStore.getByTagsAndDate(undefined, date).length).toBe(100);
   });
 });
