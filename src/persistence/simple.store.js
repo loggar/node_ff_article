@@ -7,16 +7,50 @@ class SimpleDataStore {
     this.articles = [];
   }
 
-  getAll() {
-    return this.articles;
-  }
-
+  /**
+   * Add an article object (cloned) to datastore
+   * @param {object} article `{
+   *  id: string,
+   *  title: string,
+   *  date: string,
+   *  body: string,
+   *  tags: array,
+   * }`
+   */
   add(article) {
-    if (this.articles.find((ele) => ele.id === article.id)) {
+    if (this.articles.find((o) => o.id === article.id)) {
       throw new Error('id already exists');
     }
 
-    this.articles.push(article);
+    this.articles.push({ ...article });
+  }
+
+  /**
+   * Get all articles (cloned) from datastore
+   * @returns {array}
+   */
+  getAll() {
+    return [...this.articles];
+  }
+
+  /**
+   * Get filtered articles by tag and date from datastore
+   * @param {string} tag
+   * @param {string} date
+   * @returns {array}
+   */
+  getByTagsAndDate(tag = '', date = '') {
+    if (!tag && !date) return this.getAll();
+
+    const byDate = date
+      ? this.articles.filter((o) => o.date === date)
+      : this.articles;
+
+    if (tag) {
+      return [...byDate.filter((o) => o.tags.includes(tag))];
+    }
+
+    return [...byDate];
   }
 }
 

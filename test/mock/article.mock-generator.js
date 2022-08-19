@@ -53,7 +53,7 @@ const generate = (id = 1, date = '') => ({
   title: lorem.generateSentences(1),
   date,
   body: lorem.generateParagraphs(1),
-  tags: getRandomTags(getRandomNumber(0, 4)),
+  tags: getRandomTags(getRandomNumber(0, 5)),
 });
 
 export default generate;

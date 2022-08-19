@@ -15,7 +15,7 @@ describe('article mock-generator', () => {
 
   let id = 1;
 
-  it.each(dates)('given %p, should return a valid article object', (date) => {
+  it.each(dates)('given %p, should return a valid article', (date) => {
     [...Array(100)].forEach(() => {
       const article = mock(id, date);
       expect(article).not.toBe(undefined);
@@ -29,7 +29,7 @@ describe('article mock-generator', () => {
     });
   });
 
-  it('should return a valid article object {id: "1", date: "", ...}', () => {
+  it('given no arguments, should return a valid article {id: "1", date: "", ...}', () => {
     const article = mock();
     expect(article).not.toBe(undefined);
     expect(article).toBeInstanceOf(Object);
@@ -60,7 +60,7 @@ describe('getRandomNumber', () => {
       });
   });
 
-  it('should return an int number 1 when missing args', () => {
+  it('given no arguments, should return an int number 1', () => {
     expect(getRandomNumber()).toBe(1);
   });
 });
@@ -76,7 +76,7 @@ describe('getRandomTags', () => {
     expect(mockTagsMax.length <= tags.length).toBeTruthy();
   });
 
-  it('should return tag items in tags range when missing arg', () => {
+  it('given no arguments, should return tag items in tags range', () => {
     const mockTagsMissingRange = getRandomTags();
     expect(mockTagsMissingRange.length <= tags.length).toBeTruthy();
   });
