@@ -14,12 +14,17 @@ describe('datastore', () => {
   it('should contain the article added', () => {
     dataStore.add(mock(1, '2022-08-18'));
 
-    const articles = dataStore.getAll();
-    expect(articles.length).toBe(1);
+    expect(dataStore.getAll().length).toBe(1);
 
-    const article = articles[0];
+    const article = dataStore.getById('1');
     expect(article.id).toEqual('1');
     expect(article.date).toEqual('2022-08-18');
+  });
+});
+
+describe('add', () => {
+  beforeEach(() => {
+    dataStore.clear();
   });
 
   it('should throw error when id already exists', () => {
@@ -27,6 +32,12 @@ describe('datastore', () => {
     expect(() => dataStore.add(mock(1, '2022-08-19'))).toThrow(
       'id already exists'
     );
+  });
+});
+
+describe('getById', () => {
+  it('given missing id as argument, should throw error', () => {
+    expect(() => dataStore.getById()).toThrow('invalid parameter');
   });
 });
 

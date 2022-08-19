@@ -13,6 +13,14 @@ class ArticleRepository {
     this.store.add(article);
   }
 
+  retrieveOne(id) {
+    const article = this.store.getById(id);
+    if (!article) {
+      throw new Error(`could not find: ${id}`);
+    }
+    return article;
+  }
+
   retrieve(filter = { tag: '', date: '' }) {
     return this.store.getByTagsAndDate(filter.tag, filter.date);
   }

@@ -26,6 +26,18 @@ class SimpleDataStore {
   }
 
   /**
+   * Get an article by id
+   * @param { string } id
+   * @returns article | undefined
+   */
+  getById(id = '') {
+    if (!id) {
+      throw new Error('invalid parameter');
+    }
+    return this.articles.find((o) => o.id === id);
+  }
+
+  /**
    * Get all articles (cloned) from datastore
    * @returns {array}
    */

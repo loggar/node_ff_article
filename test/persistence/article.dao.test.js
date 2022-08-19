@@ -15,6 +15,25 @@ describe('persist', () => {
   });
 });
 
+describe('retrieveOne', () => {
+  beforeEach(() => {
+    dao.clear();
+  });
+
+  it('given missing id as argument, should throw error', () => {
+    expect(() => dao.retrieveOne()).toThrow('invalid parameter');
+  });
+
+  it('given id as argument, should return article', () => {
+    expect(() => dao.retrieveOne('1')).toThrow('could not find: 1');
+  });
+
+  it('given id as argument, should return article', () => {
+    dao.persist(article);
+    expect(dao.retrieveOne(article.id.toString())).toEqual(article);
+  });
+});
+
 describe('retrieve', () => {
   beforeEach(() => {
     dao.clear();
