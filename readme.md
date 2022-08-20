@@ -132,7 +132,7 @@ return {
 
 I wrote unit test, api test based on `jest` test suite convention, and built them to cover all modules in the application.
 
-```sh
+```
 $ npm test
 
 > tech-challenge-ff-node@0.0.0 test
