@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "8cf43e64-9ffd-4f23-a6eb-f2c803f54a57",
+		"name": "article-ff-node",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22921390"
+	},
+	"item": [
+		{
+			"name": "POST /articles",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"article\": {\r\n    \"id\": \"10099\",\r\n    \"title\": \"Nostrud non consectetur adipisicing pariatur Lorem.\",\r\n    \"date\": \"2022-08-24\",\r\n    \"body\": \"Aliqua reprehenderit non sit fugiat Lorem sit ut veniam in cupidatat nulla veniam excepteur. Sit minim veniam deserunt fugiat et nisi. Culpa mollit mollit pariatur eu minim. Sint non esse quis mollit occaecat minim proident fugiat. Sint esse reprehenderit qui cillum esse cupidatat aliqua fugiat magna minim do ad nostrud laboris ullamco.\",\r\n    \"tags\": [\"food\", \"environment\", \"education\", \"media\"]\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/articles",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /articles - already exist",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"article\": {\r\n    \"id\": \"583\",\r\n    \"title\": \"Nostrud non consectetur adipisicing pariatur Lorem.\",\r\n    \"date\": \"2022-08-24\",\r\n    \"body\": \"Aliqua reprehenderit non sit fugiat Lorem sit ut veniam in cupidatat nulla veniam excepteur. Sit minim veniam deserunt fugiat et nisi. Culpa mollit mollit pariatur eu minim. Sint non esse quis mollit occaecat minim proident fugiat. Sint esse reprehenderit qui cillum esse cupidatat aliqua fugiat magna minim do ad nostrud laboris ullamco.\",\r\n    \"tags\": [\"food\", \"environment\", \"education\", \"media\"]\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/articles",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /articles - input article validation 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/articles",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /articles - input article validation 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"article\": {\r\n    \"id\": \"a\",\r\n    \"title\": \"\",\r\n    \"date\": \"2022-0\",\r\n    \"body\": \"\",\r\n    \"tags\": [34]\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/articles",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /articles/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/articles/583",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"articles",
+						"583"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /articles/{id} - not existing article",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/articles/30001",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"articles",
+						"30001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /articles/{id} - invalid id format",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/articles/abc",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"articles",
+						"abc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /{tagName}/{date}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/tags/fitness/20220820",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tags",
+						"fitness",
+						"20220820"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /{tagName}/{date} - invalid date format",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/tags/fitness/2022-08-20",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tags",
+						"fitness",
+						"2022-08-20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /{tagName}/{date} - no searched articles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/tags/fitness/19900820",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tags",
+						"fitness",
+						"19900820"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

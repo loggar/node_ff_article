@@ -89,7 +89,7 @@ In data storage, searching articles:
 | Data access layer implementation (including mock data generation)          | 4                |
 | Service logic implementation                                               | 1                |
 | Setting up HTTP server packages and REST API endpoint implementation       | 4                |
-| HTTP client test                                                           |                  |
+| HTTP client test                                                           | 1                |
 | Submission                                                                 |                  |
 
 ## Other items
@@ -102,7 +102,7 @@ A list that I would have added to the project if I had more time:
 - Data access object with 3'rd party database systems
 - API authentication
 - Logging production
-- HTTP client request collection
+- ~~HTTP client request collection~~
 - API documentation
 - Environment profiling
 - Containerizing production build

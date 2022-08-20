@@ -1,0 +1,65 @@
+GET http://localhost:3000/articles/583 HTTP/1.1
+###
+
+GET http://localhost:3000/articles/30001 HTTP/1.1
+###
+
+GET http://localhost:3000/articles/abc HTTP/1.1
+###
+
+GET http://localhost:3000/tags/fitness/20220820 HTTP/1.1
+###
+
+GET http://localhost:3000/tags/fitness/2022-08-20 HTTP/1.1
+###
+
+GET http://localhost:3000/tags/fitness/19900820 HTTP/1.1
+###
+
+POST http://localhost:3000/articles HTTP/1.1
+content-type: application/json
+
+{
+  "article": {
+    "id": "10099",
+    "title": "Nostrud non consectetur adipisicing pariatur Lorem.",
+    "date": "2022-08-24",
+    "body": "Aliqua reprehenderit non sit fugiat Lorem sit ut veniam in cupidatat nulla veniam excepteur. Sit minim veniam deserunt fugiat et nisi. Culpa mollit mollit pariatur eu minim. Sint non esse quis mollit occaecat minim proident fugiat. Sint esse reprehenderit qui cillum esse cupidatat aliqua fugiat magna minim do ad nostrud laboris ullamco.",
+    "tags": ["food", "environment", "education", "media"]
+  }
+}
+###
+
+POST http://localhost:3000/articles HTTP/1.1
+content-type: application/json
+
+{
+  "article": {
+    "id": "583",
+    "title": "Nostrud non consectetur adipisicing pariatur Lorem.",
+    "date": "2022-08-24",
+    "body": "Aliqua reprehenderit non sit fugiat Lorem sit ut veniam in cupidatat nulla veniam excepteur. Sit minim veniam deserunt fugiat et nisi. Culpa mollit mollit pariatur eu minim. Sint non esse quis mollit occaecat minim proident fugiat. Sint esse reprehenderit qui cillum esse cupidatat aliqua fugiat magna minim do ad nostrud laboris ullamco.",
+    "tags": ["food", "environment", "education", "media"]
+  }
+}
+###
+
+POST http://localhost:3000/articles HTTP/1.1
+content-type: application/json
+
+{}
+###
+
+POST http://localhost:3000/articles HTTP/1.1
+content-type: application/json
+
+{
+  "article": {
+    "id": "a",
+    "title": "",
+    "date": "2022-0",
+    "body": "",
+    "tags": [34]
+  }
+}
+###
