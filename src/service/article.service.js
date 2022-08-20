@@ -7,6 +7,13 @@ class ArticleService {
 
   save(article) {
     this.repository.persist(article);
+    return {
+      id: article.id,
+    };
+  }
+
+  getOne(id) {
+    return this.repository.retrieveOne(id);
   }
 
   search(filter = { tag: '', date: '' }) {

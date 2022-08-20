@@ -32,7 +32,7 @@ class SimpleDataStore {
    */
   getById(id = '') {
     if (!id) {
-      throw new Error('invalid parameter');
+      throw new Error('invalid format: id');
     }
     return this.articles.find((o) => o.id === id);
   }

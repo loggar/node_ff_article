@@ -6,7 +6,7 @@
   },
   "extends": ["prettier", "airbnb"],
   "plugins": ["prettier", "jest"],
-  "ignorePatterns": ["/tmp/**/*.js"],
+  "ignorePatterns": ["/tmp/**", "/dist/**/*"],
   "rules": {
     "no-underscore-dangle": 0,
     "comma-dangle": 0,

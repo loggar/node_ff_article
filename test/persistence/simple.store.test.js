@@ -37,7 +37,7 @@ describe('add', () => {
 
 describe('getById', () => {
   it('given missing id as argument, should throw error', () => {
-    expect(() => dataStore.getById()).toThrow('invalid parameter');
+    expect(() => dataStore.getById()).toThrow('invalid format: id');
   });
 });
 

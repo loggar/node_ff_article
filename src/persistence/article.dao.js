@@ -16,7 +16,7 @@ class ArticleRepository {
   retrieveOne(id) {
     const article = this.store.getById(id);
     if (!article) {
-      throw new Error(`could not find: ${id}`);
+      throw new Error('could not find article');
     }
     return article;
   }

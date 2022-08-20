@@ -21,11 +21,11 @@ describe('retrieveOne', () => {
   });
 
   it('given missing id as argument, should throw error', () => {
-    expect(() => dao.retrieveOne()).toThrow('invalid parameter');
+    expect(() => dao.retrieveOne()).toThrow('invalid format: id');
   });
 
   it('given id as argument, should return article', () => {
-    expect(() => dao.retrieveOne('1')).toThrow('could not find: 1');
+    expect(() => dao.retrieveOne('1')).toThrow('could not find article');
   });
 
   it('given id as argument, should return article', () => {

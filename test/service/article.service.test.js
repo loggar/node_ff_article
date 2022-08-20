@@ -18,6 +18,16 @@ describe('save', () => {
   });
 });
 
+describe('getOne', () => {
+  beforeEach(() => {
+    articleDao.clear();
+  });
+
+  it('given missing id as argument, ', () => {
+    expect(() => articleService.getOne()).toThrow('invalid format: id');
+  });
+});
+
 describe('search', () => {
   beforeEach(() => {
     articleDao.clear();
