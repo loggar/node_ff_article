@@ -18,7 +18,13 @@ router.post('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  res.json(articleService.getOne(req.params.id));
+  const { id } = req.params;
+
+  if (!/^\d{1,9}$/.test(id)) {
+    throw new Error('invalid format: id');
+  }
+
+  res.json(articleService.getOne(id));
 });
 
 module.exports = router;

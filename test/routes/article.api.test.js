@@ -46,3 +46,12 @@ test('GET /articles/{id}', async () => {
       expect(response.body.message).toEqual('could not find article');
     });
 });
+
+test('GET /articles/{id-not-digits}', async () => {
+  await supertest(app)
+    .get('/articles/abc')
+    .expect(500)
+    .then((response) => {
+      expect(response.body.message).toEqual('invalid format: id');
+    });
+});
